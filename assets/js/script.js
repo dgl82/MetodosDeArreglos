@@ -19,6 +19,7 @@ const tareas = [
 const listaTareas = document.querySelector("#listaTareas");
 const tareaInput = document.querySelector("#nuevaTarea");
 const btnAgregar = document.querySelector("#agregarTarea");
+const tareasTotales = document.querySelector("#tareasTotales");
 
 const renderHtml = () => {
   listaTareas.innerHTML = "";
@@ -32,7 +33,12 @@ const renderHtml = () => {
   });
 };
 
+const contarTareas = () => {
+  tareasTotales.innerHTML = tareas.length;
+};
+
 renderHtml();
+contarTareas();
 
 btnAgregar.addEventListener("click", () => {
   if (tareaInput.value.trim() == "") {
@@ -46,6 +52,7 @@ btnAgregar.addEventListener("click", () => {
     tareas.push(nuevaTarea);
     tareaInput.value = "";
     renderHtml();
+    contarTareas();
   }
 });
 
@@ -53,4 +60,5 @@ const borrarTarea = (id) => {
   const indexTarea = tareas.findIndex((tarea) => tarea.id === id);
   tareas.splice(indexTarea, 1);
   renderHtml();
+  contarTareas();
 };
