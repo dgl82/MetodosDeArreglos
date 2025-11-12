@@ -2,3 +2,38 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin-top: 10px;
+}
+
+input {
+  width: 90%;
+
+  margin-bottom: 10px;
+}
+
+#cajon {
+  width: 800px;
+}
+
+#cajonTareas {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tareas {
+  margin-right: 10px;
+}
